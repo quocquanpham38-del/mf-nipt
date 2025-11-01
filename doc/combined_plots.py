@@ -13,7 +13,7 @@ height_mm = 300
 width_inch = width_mm / 25.4
 height_inch = height_mm / 25.4
 
-# 使用huggingface的dataset库读取数据（替换原CSV读取方式）
+# 使用huggingface的dataset库读取数据
 repo_id = "sxj1024/cumcm_test"
 dataset = load_dataset(repo_id)
 data = dataset['train'].to_pandas()  # 转换为pandas DataFrame
@@ -78,4 +78,5 @@ ax6.tick_params(axis='both', rotation=0)
 # 调整布局并保存
 plt.tight_layout()
 plt.savefig('combined_plots.svg')
+
 plt.close()
