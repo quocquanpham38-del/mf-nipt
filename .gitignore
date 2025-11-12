@@ -1,0 +1,84 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+Desktop.ini
+
+# Linux trash
+.Trash-*
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual environments
+env/
+venv/
+.venv/
+venv.bak/
+ENV/
+env.bak/
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+wheels/
+
+# Testing / coverage
+.coverage
+coverage.xml
+htmlcov/
+.nox/
+.tox/
+.pytest_cache/
+.mypy_cache/
+.pyre/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDEs and editors
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.code-workspace
+
+# Logs and runtime files
+*.log
+*.pid
+*.seed
+*.pid.lock
+
+# Environment and secrets
+.env
+.env.*
+.secret
+credentials.json
+secrets.yml
+
+# R
+.Rhistory
+.RData
+.Ruserdata
+.Rproj.user
+
+# Misc
+*.sqlite3
+*.bak
+*.swp
+*.tmp
+*.temp
+
+# Optional: ignore data/ or results/ if your repo stores large files there
+# /data/
+# /results/
