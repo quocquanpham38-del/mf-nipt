@@ -1,0 +1,28 @@
+﻿feature,VIF
+const,137112.7346511954
+Weight,360.92035120525424
+Pregnant Woman's BMI (BMI: Body Mass Index),224.8437327680592
+Height,109.5359004783438
+Gestational_Week_days,4.902184645491455
+Number of Detection Blood Draws,3.8484597880888276
+GC Content of Chromosome 13,2.4091149645818244
+GC Content,2.2865970150388977
+GC Content of Chromosome 18,2.167949318992924
+GC Content of Chromosome 21,2.067964788995278
+Z-Score of Chromosome X,1.983095683498944
+IVF Pregnancy (IVF: In Vitro Fertilization)_IVF Pregnancy (IVF: In Vitro Fertilization),1.9820568237696155
+IVF Pregnancy (IVF: In Vitro Fertilization)_Natural Conception,1.957647612218605
+Number of Pregnancies_≥3,1.9341521362399003
+Proportion of Filtered Reads,1.8863107566845707
+Number of Uniquely Aligned Reads,1.7854860925074345
+Number of Deliveries,1.7572587041621037
+Number of Raw Reads,1.7314478885353366
+Number of Pregnancies_2,1.6102570281345736
+Z-Score of Chromosome Y,1.5711384410815887
+Z-Score of Chromosome 18,1.4892123293432553
+Z-Score of Chromosome 13,1.4272272792320035
+Concentration of Chromosome X,1.3177471271717325
+Age,1.1331707909006943
+Proportion of Duplicate Reads,1.0792936558860176
+Proportion Aligned to Reference Genome,1.0683867196210781
+Z-Score of Chromosome 21,1.045435446375747

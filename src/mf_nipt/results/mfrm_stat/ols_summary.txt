@@ -1,0 +1,52 @@
+                                 OLS Regression Results                                 
+========================================================================================
+Dep. Variable:     Fetal Health Status (Yes/No)   R-squared:                       0.273
+Model:                                      OLS   Adj. R-squared:                  0.255
+Method:                           Least Squares   F-statistic:                     15.23
+Date:                          Wed, 19 Nov 2025   Prob (F-statistic):           1.92e-56
+Time:                                  00:35:27   Log-Likelihood:                 468.30
+No. Observations:                          1082   AIC:                            -882.6
+Df Residuals:                              1055   BIC:                            -748.0
+Df Model:                                    26                                         
+Covariance Type:                      nonrobust                                         
+===========================================================================================================================================================
+                                                                                              coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+const                                                                                       4.3510      1.789      2.432      0.015       0.840       7.862
+Age                                                                                        -0.0088      0.001     -6.262      0.000      -0.012      -0.006
+Height                                                                                     -0.0285      0.010     -2.946      0.003      -0.047      -0.010
+Weight                                                                                      0.0272      0.009      2.941      0.003       0.009       0.045
+Number of Detection Blood Draws                                                             0.0040      0.008      0.476      0.634      -0.012       0.021
+Pregnant Woman's BMI (BMI: Body Mass Index)                                                -0.0693      0.024     -2.842      0.005      -0.117      -0.021
+Number of Raw Reads                                                                      9.071e-09   6.71e-09      1.353      0.176   -4.09e-09    2.22e-08
+Proportion Aligned to Reference Genome                                                      0.6244      0.334      1.868      0.062      -0.031       1.280
+Proportion of Duplicate Reads                                                               2.9677      1.828      1.623      0.105      -0.620       6.555
+Number of Uniquely Aligned Reads                                                        -1.222e-08   9.06e-09     -1.348      0.178      -3e-08    5.57e-09
+GC Content                                                                                 -0.2607      2.211     -0.118      0.906      -4.598       4.077
+Z-Score of Chromosome 13                                                                   -0.0019      0.005     -0.403      0.687      -0.011       0.007
+Z-Score of Chromosome 18                                                                   -0.0110      0.005     -2.395      0.017      -0.020      -0.002
+Z-Score of Chromosome 21                                                                    0.0083      0.004      1.834      0.067      -0.001       0.017
+Z-Score of Chromosome X                                                                    -0.0009      0.005     -0.168      0.867      -0.011       0.009
+Z-Score of Chromosome Y                                                                     0.0084      0.005      1.813      0.070      -0.001       0.017
+Concentration of Chromosome X                                                               0.0537      0.134      0.401      0.688      -0.209       0.316
+GC Content of Chromosome 13                                                                -3.8070      2.371     -1.605      0.109      -8.460       0.846
+GC Content of Chromosome 18                                                                 4.9369      2.357      2.095      0.036       0.312       9.562
+GC Content of Chromosome 21                                                                 1.2132      1.825      0.665      0.506      -2.368       4.794
+Proportion of Filtered Reads                                                             1.542e-05   2.12e-05      0.726      0.468   -2.63e-05    5.71e-05
+Number of Deliveries                                                                        0.0110      0.010      1.089      0.276      -0.009       0.031
+Gestational_Week_days                                                                    2.637e-05      0.000      0.070      0.944      -0.001       0.001
+IVF Pregnancy (IVF: In Vitro Fertilization)_IVF Pregnancy (IVF: In Vitro Fertilization)    -0.9268      0.079    -11.670      0.000      -1.083      -0.771
+IVF Pregnancy (IVF: In Vitro Fertilization)_Natural Conception                             -0.0477      0.054     -0.877      0.381      -0.154       0.059
+Number of Pregnancies_2                                                                    -0.0305      0.015     -2.035      0.042      -0.060      -0.001
+Number of Pregnancies_≥3                                                                   -0.0425      0.015     -2.829      0.005      -0.072      -0.013
+==============================================================================
+Omnibus:                     1101.748   Durbin-Watson:                   0.656
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):            36483.189
+Skew:                          -5.080   Prob(JB):                         0.00
+Kurtosis:                      29.571   Cond. No.                     3.45e+09
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+[2] The condition number is large, 3.45e+09. This might indicate that there are
+strong multicollinearity or other numerical problems.
