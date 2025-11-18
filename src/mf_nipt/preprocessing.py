@@ -166,7 +166,7 @@ def ensure_data_split(df=None, train_frac=0.8, random_state=42, force=False):
     return train_df, test_df
 
 # ----------------------------
-# 简单加载接口
+# 加载接口
 # ----------------------------
 def load_train():
     p = os.path.join(DATA_DIR, "train.csv")
