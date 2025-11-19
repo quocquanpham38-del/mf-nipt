@@ -61,7 +61,7 @@ bmi_data = data[" Pregnant Woman's BMI (BMI: Body Mass Index)"]
 
 ## Train
 
-1. The training process includes three key steps: data preprocessing, model training, and result saving.
+The training process includes three key steps: data preprocessing, model training, and result saving.
 
    ### Data Preprocessing
 
