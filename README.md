@@ -3,7 +3,7 @@ MF-NIPT: Multi-Factor Statistical Modeling for Non-Invasive Prenatal Testing Tim
 </h1>
 <p align="center">
 <img src="https://img.shields.io/badge/OS-Ubuntu22.4-blue" />
-<img src="https://img.shields.io/badge/Python-3.8-red" />
+<img src="https://img.shields.io/badge/Python-3.13-red" />
 <img src="https://img.shields.io/badge/Build-Success-green" />
 <img src="https://img.shields.io/badge/License-BSD-blue" />
 <img src="https://img.shields.io/badge/Release-0.1-blue" />
@@ -22,7 +22,7 @@ Non-Invasive Prenatal Testing (NIPT), which analyzes cell-free fetal DNA (cffDNA
 ## Conda Environment Setup
 
 ``` shell
-conda create --name mfnipt --file ./requirements.txt
+conda create -n mfnipt python=3.13 -y
 conda activate mfnipt
 ```
 
