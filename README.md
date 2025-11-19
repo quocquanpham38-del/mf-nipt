@@ -17,7 +17,12 @@ Non-Invasive Prenatal Testing (NIPT), which analyzes cell-free fetal DNA (cffDNA
 <b>Figure 1.</b> Structure of MF-NIPT.  
 </p>
 
+## Clone the Repository
 
+```bash
+git clone https://github.com/quocquanpham38-del/mf-nipt.git
+cd mf-nipt
+```
 
 ## Conda Environment Setup
 
@@ -25,6 +30,13 @@ Non-Invasive Prenatal Testing (NIPT), which analyzes cell-free fetal DNA (cffDNA
 conda create -n mfnipt python=3.13 -y
 conda activate mfnipt
 ```
+## Install Dependencies
+
+```bash
+cd src/mf-nipt
+pip install -r requirements.txt
+```
+
 
 ## Dataset
 
