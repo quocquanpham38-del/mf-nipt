@@ -61,32 +61,102 @@ bmi_data = data[" Pregnant Woman's BMI (BMI: Body Mass Index)"]
 
 ## Train
 
-``` python
-check_dir(base_path+"output/csv/")
-check_dir(base_path+"output/log/")
-check_dir(base_path+"output/pt/")
-check_dir(base_path+"output/board/")
+1. The training process includes three key steps: data preprocessing, model training, and result saving.
 
+   ### Data Preprocessing
+
+   Data preprocessing is implemented in `preprocessing.py`, with the following main steps:
+
+   1. **Data Loading**: Load raw data from Hugging Face Dataset or local `raw.csv` file
+   2. **Data Cleaning**: Standardize column names, convert gestational age (calculate days), compute BMI, etc.
+   3. **Feature Engineering**: Calculate features like the earliest viable gestational week (g*) for each pregnant woman
+   4. **Data Splitting**: Split data into 80% training set and 20% test set. Ensure no data from the same pregnant woman exists in both sets.
+
+```python
+# Example of data preprocessing and splitting
+from preprocessing import ensure_data_split
+
+# Perform data splitting to generate train.csv and test.csv
+train_df, test_df = ensure_data_split(train_frac=0.8, random_state=42)
 ```
 
-output:
+Split data is saved in the `data/` directory:
 
-``` shell
-ddd
+- `data/train.csv`: Training set
+- `data/test.csv`: Test set
+
+### Model Training
+
+The project includes 4 core models, all trained on the training set:
+
+1. **Statistical Relationship Modeling (MFRM-1)**: Analyze statistical relationships between factors
+2. **BMI Single-Factor Timing Model (MFRM-2)**: Predict optimal NIPT timing based on maternal BMI
+3. **Multi-Factor Timing Model (MFRM-3)**: Predict optimal NIPT timing using multiple factors
+4. **Abnormality Risk Prediction Model (MFAP)**: Predict fetal abnormality risk
+
+Training is executed automatically by running the main script:
+
+```bash
+python main.py
 ```
+
+### Training Outputs
+
+Training results are saved in the `results/` directory, with subdirectories for each model:
+
+- `results/mfrm_stat/`: Statistical analysis results
+  - `clustermap.png`: Cluster heatmap
+  - `ols_summary.txt`: OLS regression summary
+  - `significant_coef.png`: Significant coefficients plot
+  - `spearman_heatmap.png`: Spearman correlation heatmap
+  - `vif.csv`: Variance Inflation Factor table
+- `results/mfrm_timing_single/`: Single-factor timing model results
+  - `bmi_groups_detail.csv`: BMI group details
+  - `df_gstar_train.csv`: Training set g* data
+  - `greedy_convergence.png`: Greedy grouping convergence plot
+  - `roc_curve_test.png`: ROC curve
+- `results/mfrm_timing_multi/`: Multi-factor timing model results
+  - `bmi_groups_detail_multivar.csv`: Multivariate BMI group details
+  - `df_gstar_train_multivar.csv`: Multivariate training set g* data
+  - `greedy_convergence_multivar.png`: Multivariate greedy grouping convergence plot
+  - `roc_curve_multivar_test.png`: Multivariate ROC curve
+- `results/mfap_risk/`: Risk prediction model results
+  - `risk_assessment_results_test.csv`: Test set risk assessment results
+  - `roc_test.png`: Risk prediction ROC curve
 
 ## Test
 
-``` python
-check_dir(base_path+"output/csv/")
-check_dir(base_path+"output/log/")
-check_dir(base_path+"output/pt/")
-check_dir(base_path+"output/board/")
+The test process uses trained models and the test set to evaluate performance, including model assessment and result visualization.
 
+### Test Data
+
+Test data is `data/test.csv` (generated during preprocessing), containing 20% of raw data. It is completely independent of the training set to ensure objective evaluation.
+
+### Model Testing
+
+All models are evaluated on the test set:
+
+1. **MFRM-1**: Verify stability of statistical relationships on test data
+2. **MFRM-2**: Evaluate AUC and Brier score with trained GBDT model; generate ROC curve
+3. **MFRM-3**: Assess performance of multivariate GBDT model; verify coverage via BMI grouping
+4. **MFAP**: Evaluate AUC and F1-score with PSO-optimized decision tree model; generate confusion matrix
+
+Testing is executed automatically by running the main script:
+
+```bash
+python main.py
 ```
 
-output:
+### Test Outputs
 
-``` shell
+Test results are saved together with training outputs in the `results/` directory:
 
-```
+- `results/mfrm_timing_single/`:
+  - `roc_curve_test.png`: ROC curve for BMI-only model
+  - `bmi_groups_detail.csv`: BMI group details (including train/test coverage)
+- `results/mfrm_timing_multi/`:
+  - `roc_curve_multivar_test.png`: ROC curve for multivariate model
+  - `bmi_groups_detail_multivar.csv`: Multivariate BMI group details (including train/test coverage)
+- `results/mfap_risk/`:
+  - `roc_test.png`: ROC curve for abnormality risk prediction
+  - `risk_assessment_results_test.csv`: Detailed test set risk results (true label, predicted label, risk score, risk grade)
